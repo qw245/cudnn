@@ -55,7 +55,7 @@
 #define CUDNN_H_
 
 #define CUDNN_MAJOR      5
-#define CUDNN_MINOR      1
+#define CUDNN_MINOR      0
 #define CUDNN_PATCHLEVEL 5
 
 #define CUDNN_VERSION    (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
@@ -463,8 +463,7 @@ typedef enum
     CUDNN_CONVOLUTION_FWD_ALGO_DIRECT                = 3,
     CUDNN_CONVOLUTION_FWD_ALGO_FFT                   = 4,
     CUDNN_CONVOLUTION_FWD_ALGO_FFT_TILING            = 5,
-    CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD              = 6,
-    CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD_NONFUSED     = 7
+    CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD              = 6
 } cudnnConvolutionFwdAlgo_t;
 
 typedef struct {
@@ -567,9 +566,7 @@ typedef enum
     CUDNN_CONVOLUTION_BWD_FILTER_ALGO_0         = 0,  // non-deterministic
     CUDNN_CONVOLUTION_BWD_FILTER_ALGO_1         = 1,
     CUDNN_CONVOLUTION_BWD_FILTER_ALGO_FFT       = 2,
-    CUDNN_CONVOLUTION_BWD_FILTER_ALGO_3         = 3,  // non-deterministic, algo0 with workspace
-    // CUDNN_CONVOLUTION_BWD_FILTER_ALGO_WINOGRAD  = 4, // not implemented
-    CUDNN_CONVOLUTION_BWD_FILTER_ALGO_WINOGRAD_NONFUSED = 5
+    CUDNN_CONVOLUTION_BWD_FILTER_ALGO_3         = 3   // non-deterministic, algo0 with workspace
 } cudnnConvolutionBwdFilterAlgo_t;
 
 
@@ -655,12 +652,11 @@ typedef enum
 
 typedef enum
 {
-    CUDNN_CONVOLUTION_BWD_DATA_ALGO_0                 = 0, // non-deterministic
-    CUDNN_CONVOLUTION_BWD_DATA_ALGO_1                 = 1,
-    CUDNN_CONVOLUTION_BWD_DATA_ALGO_FFT               = 2,
-    CUDNN_CONVOLUTION_BWD_DATA_ALGO_FFT_TILING        = 3,
-    CUDNN_CONVOLUTION_BWD_DATA_ALGO_WINOGRAD          = 4,
-    CUDNN_CONVOLUTION_BWD_DATA_ALGO_WINOGRAD_NONFUSED = 5
+    CUDNN_CONVOLUTION_BWD_DATA_ALGO_0          = 0, // non-deterministic
+    CUDNN_CONVOLUTION_BWD_DATA_ALGO_1          = 1,
+    CUDNN_CONVOLUTION_BWD_DATA_ALGO_FFT        = 2,
+    CUDNN_CONVOLUTION_BWD_DATA_ALGO_FFT_TILING = 3,
+    CUDNN_CONVOLUTION_BWD_DATA_ALGO_WINOGRAD   = 4
 } cudnnConvolutionBwdDataAlgo_t;
 
 typedef struct {
